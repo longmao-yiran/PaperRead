@@ -1,0 +1,111 @@
+References
+[1] Abdelrahman Abdelhamed. Website. https://www.
+eecs.yorku.ca/˜kamel/sidd/benchmark.php.
+Accessed: 2018-11-01. 6
+[2] Abdelrahman Abdelhamed, Stephen Lin, and Michael S
+Brown. A high-quality denoising dataset for smartphone
+cameras. In CVPR, pages 1692–1700, 2018. 6
+[3] Francis J Anscombe. The transformation of poisson, bino-
+mial and negative-binomial data. Biometrika, 35(3/4):246–
+254, 1948. 2, 3
+[4] Saeed Anwar and Nick Barnes. Real image denoising with
+feature attention. In ICCV, pages 3155–3164, 2019. 1
+[5] Joshua Batson and Loic Royer. Noise2self: Blind denoising
+by self-supervision. In ICML, pages 524–533, 2019. 1, 2
+[6] Paul A Bromiley. Products and convolutions of gaussian dis-
+tributions. Medical School, Univ. Manchester , Manchester ,
+UK, Tech. Rep, 3:2003, 2003. 4
+[7] Tim Brooks, Ben Mildenhall, Tianfan Xue, Jiawen Chen,
+Dillon Sharlet, and Jonathan T Barron. Unprocessing images
+for learned raw denoising. In CVPR, pages 11036–11045,
+2019. 1
+[8] Jaeseok Byun, Sungmin Cha, and Taesup Moon. Fbi-
+denoiser: Fast blind image denoiser for poisson-gaussian
+noise. In CVPR, pages 5768–5777, 2021. 2, 3, 5, 6, 7
+[9] Jaeseok Byun and Taesup Moon. Learning blind pixel-
+wise afﬁne image denoiser with single noisy images. SPL,
+27:1105–1109, 2020. 1, 2, 7
+[10] Sungmin Cha and Taesup Moon. Fully convolutional pixel
+adaptive image denoiser. In ICCV, pages 4160–4169, 2019.
+1, 2
+[11] Guangyong Chen, Fengyuan Zhu, and Pheng Ann Heng. An
+efﬁcient statistical method for image noise level estimation.
+In ICCV, pages 477–485, 2015. 2, 3, 5
+[12] Jingwen Chen, Jiawei Chen, Hongyang Chao, and Ming
+Yang. Image blind denoising with generative adversarial net-
+work based noise modeling. In CVPR, pages 3155–3164,
+2018. 1
+[13] Kostadin Dabov, Alessandro Foi, Vladimir Katkovnik, and
+Karen Egiazarian. Image denoising by sparse 3-d transform-
+domain collaborative ﬁltering. TIP, 16(8):2080–2095, 2007.
+6, 7
+[14] Jia Deng, Wei Dong, Richard Socher, Li-Jia Li, Kai Li,
+and Li Fei-Fei. Imagenet: A large-scale hierarchical image
+database. In CVPR, pages 248–255, 2009. 6
+[15] Alessandro Foi, Mejdi Trimeche, Vladimir Katkovnik, and
+Karen Egiazarian. Practical poissonian-gaussian noise
+modeling and ﬁtting for single-image raw-data. TIP,
+17(10):1737–1754, 2008. 2, 6
+[16] Rich Franzen. Kodak lossless true color image suite. source:
+http://r0k. us/graphics/kodak, 4(2), 1999. 6
+[17] Shi Guo, Zifei Yan, Kai Zhang, Wangmeng Zuo, and Lei
+Zhang. Toward convolutional blind denoising of real pho-
+tographs. In CVPR, pages 1712–1722, 2019. 1
+[18] Samuel W Hasinoff. Photon, poisson noise. Computer Vi-
+sion: A Reference Guide , pages 608–610, 2014. 3
+[19] Jia-Bin Huang, Abhishek Singh, and Narendra Ahuja. Single
+image super-resolution from transformed self-exemplars. In
+CVPR, pages 5197–5206, 2015. 6
+[20] Tao Huang, Songjiang Li, Xu Jia, Huchuan Lu, and
+Jianzhuang Liu. Neighbor2neighbor: Self-supervised de-
+noising from single noisy images. In CVPR, pages 14781–
+14790, 2021. 2, 5, 6, 7
+[21] Diederik P Kingma and Jimmy Ba. Adam: A method for
+stochastic optimization. In ICLR, 2015. 5
+[22] Alexander Krull, Tim-Oliver Buchholz, and Florian Jug.
+Noise2void-learning denoising from single noisy images. In
+CVPR, pages 2129–2137, 2019. 1, 2, 6, 7
+[23] Samuli Laine, Tero Karras, Jaakko Lehtinen, and Timo
+Aila. High-quality self-supervised deep image denoising.
+NeurIPS, 32:6970–6980, 2019. 1, 2, 5, 6
+[24] Wooseok Lee, Sanghyun Son, and Kyoung Mu Lee. Ap-bsn:
+Self-supervised denoising for real-world images via asym-
+metric pd and blind-spot network. In CVPR, pages 17725–
+17734, 2022. 2
+[25] Jaakko Lehtinen, Jacob Munkberg, Jon Hasselgren, Samuli
+Laine, Tero Karras, Miika Aittala, and Timo Aila.
+Noise2noise: Learning image restoration without clean data.
+In ICML, 2018. 1, 2, 6, 7
+[26] Xinhao Liu, Masayuki Tanaka, and Masatoshi Okutomi.
+Single-image noise level estimation for blind denoising.TIP,
+22(12):5226–5237, 2013. 2
+[27] Xinhao Liu, Masayuki Tanaka, and Masatoshi Okutomi.
+Practical signal-dependent noise parameter estimation from
+a single noisy image. TIP, 23(10):4361–4371, 2014. 2, 6
+[28] Markku Makitalo and Alessandro Foi. Optimal inversion
+of the generalized anscombe transformation for poisson-
+gaussian noise. TIP, 22(1):91–103, 2012. 3
+[29] David Martin, Charless Fowlkes, Doron Tal, and Jitendra
+Malik. A database of human segmented natural images and
+its application to evaluating segmentation algorithms and
+measuring ecological statistics. In ICCV, volume 2, pages
+416–423, 2001. 6
+[30] Nick Moran, Dan Schmidt, Yu Zhong, and Patrick Coady.
+Noisier2noise: Learning to denoise from unpaired noisy
+data. In CVPR, pages 12064–12072, 2020. 2
+[31] Tongyao Pang, Huan Zheng, Yuhui Quan, and Hui Ji.
+Recorrupted-to-recorrupted: Unsupervised deep learning for
+image denoising. In CVPR, pages 2043–2052, 2021. 2
+[32] Adam Paszke, Sam Gross, Francisco Massa, Adam Lerer,
+James Bradbury, Gregory Chanan, Trevor Killeen, Zem-
+ing Lin, Natalia Gimelshein, Luca Antiga, et al. Pytorch:
+An imperative style, high-performance deep learning library.
+NeurIPS, 32:8026–8037, 2019. 6
+[33] Stanislav Pyatykh, J ¨urgen Hesser, and Lei Zheng. Image
+noise level estimation by principal component analysis. TIP,
+22(2):687–699, 2012. 2
+[34] Olaf Ronneberger, Philipp Fischer, and Thomas Brox. U-
+net: Convolutional networks for biomedical image segmen-
+tation. In International Conference on Medical image com-
+puting and computer-assisted intervention , pages 234–241,
+2015. 1, 6, 7
