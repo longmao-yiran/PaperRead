@@ -1,0 +1,100 @@
+suming that the signal is context-dependent and the noise is
+irrelevant. However, the information loss and sub-optimal
+masking strategies degrade the upper bound of denoising
+performance. Some works [38, 30, 31] introduce additional
+noise to construct training data pairs. The pre-calibrated
+noise level restricts their application, and the re-corruption
+worsens the loss of valuable signals. NBR2NBR [20] sub-
+samples low-resolution training pairs from single noisy im-
+ages for supervised training. The surrounding pixel ap-
+proximation results in over-smoothing and block artifacts.
+FBI-Denoiser (FBI-D) [8] reimplements Gaussian estima-
+tion [11] as tensor operations combined with Generalized
+Anscombe Transformations (GAT) [3] to formulate Gaus-
+sian loss. However, Gaussian loss without ﬁne-grained
+constraints zooms noise estimation errors. AP-BSN [24]
+breaks spatial correlation but remains in the scope of BSN.
+Blind2Unblind [36] achieves lossless denoising using the
+re-visible transition, but the greedy pixel-level ﬁtting with-
+out noise sensing leads to sizable residual noise.
+In this paper, we present a novel framework named
+Blind2Sound for self-supervised blind denoising, which
+achieves personalized denoising without noise residues
+while ensuring signal lossless. The framework includes
+an adaptive re-visible loss for lossless and personalized
+denoising and a Cramer Gaussian loss as a regularization
+to accurately sense noise knowledge. The framework as-
+sumes that the masked and visible branches are two inde-
+pendent generative processes, while denoising results fol-
+lowing normal distributions and the respective noise fol-
+lowing a Poisson-Gaussian distribution. This independence
+ensures that the masked results do not suppress the visible
+denoising. For optimal denoising, the adaptive loss adjusts
+noise removal via noise levels, while compatible with the
+lossless re-visible framework. The adaptive loss consists of
+two branches and their noise parameters, and the masked
+branch as an intermediate medium for gradient update. Due
+to signal dependence, the bottleneck of the masked branch
+greatly suppresses the accuracy of Poisson noise. Thus, the
+weighted Poisson noises in the mixed marginal likelihood
+is simpliﬁed to a single Poisson component. Moreover, the
+Cramer Gaussian loss introduces ﬁne-grained noise knowl-
+edge, including sub-block and cross-channel constraints, to
+boost the estimation accuracy.
+Our contribution can be summarized in three aspects:
+1. The proposed self-supervised denoising framework
+adjusts denoising intensities based on sensed noise lev-
+els, achieving personalized denoising without residual
+noise while the signal is lossless.
+2. We provide theoretical analysis for adaptive re-visible
+loss and the gradient of intermediate medium.
+3. Our approach shows excellent performance on various
+real-world datasets with dynamic noise patterns.
+2. Related Work
+Self-Supervised Blind Image Denoising Although
+Noise2Noise [25] makes collecting paired data much eas-
+ier, it remains impractical as it requires noisy image pairs
+from the same source. Therefore, blindspot schemes such
+as manual masking [22, 5] and blindspot networks [23, 10]
+have been developed to achieve self-supervised denoising.
+However, these schemes suffer from the loss of valuable
+information, leading to severe artifacts. To address this
+issue, several methods, such as Laine19 [23], DBSN [37],
+FC-AIDE [10], BP-AIDE [9], and AP-BSN [24], have
+been proposed to enhance BSN. However, these methods
+either have poor performance or slow inference on Poisson-
+Gaussian noise. FBI-D [8] proposes a fast and effective
+blind image denoiser for Poisson-Gaussian noise, but its
+noise estimator has low accuracy in sRGB space without
+ﬁne-grained noise constrains. Besides, the post-processing
+step can reinforce denoising errors accumulated in previous
+steps. Blind2Unblind [36] overcomes these limitations and
+achieves fast lossless denoising under blindspots. However,
+implicit denoising without sensing noise levels is unable to
+provide personalized noise removal for Poisson-Gaussian
+noise, resulting in residual noise artifacts.
+Noise Estimation Methods Current noise estimation
+methods [26, 33, 11, 15, 27] are mainly designed for two
+noise models: additive white Gaussian noise (AWGN) and
+Poisson-Gaussian noise. For AWGN, a signal-independent
+noise, once the noise variance is known, its distribution can
+be determined. Previous methods [26, 33] for estimating
+AWGN variance used low-rank patch selection and prin-
+cipal component analysis. Recently, Chen et al . [11] ad-
+dressed the bias issue for Gaussian parameter estimation
+using statistical decomposition of eigenvalues. In contrast,
+Poisson-Gaussian noise [15] is a mixture of Poisson and
+Gaussian components and is often considered as source-
+related noise in real-world scenarios. Foi et al. [15] intro-
+duced the Poisson-Gaussian model and provided fully au-
+tomated noise parameter estimation for a single noisy im-
+age. More recently, Liu et al. [27] improved local mean and
+noise variance estimation for selected low-rank patches.
+3. Problem Setting and Preliminaries
+3.1. Problem Formulation
+Given a noisy observation y, our goal is to learn the
+clean imagex and its noise parameters directly from a sin-
+gle noisy image. We focus on Poisson-Gaussian noise [15],
+which is common in real-world imaging sensors. The noise-
+corrupted observationy can be described as follows:
+y =αP +N, (1)

@@ -1,0 +1,99 @@
+denoised results of the noisy masked volume Ωy and the
+raw noisy image y, including their mean µm,µv, and co-
+variance Σm, Σv. 2) The noise estimator gθ(·) that cal-
+culates the Poisson-Gaussian noise parameters (α,σ 1,σ 2).
+Since actual noise levels of denoised images may differ
+from raw noisy inputs, Cramer Gaussian loss only serves as
+a regularization to assist the denoiser in picking appropriate
+noise levels. Namely, the adaptive re-visible loss also de-
+termines the noise parameters for explicit and lossless per-
+sonalized denoising. The training set D containsn training
+images denoted asD ={yi}n
+i=1, whereyi denotes theith
+raw noisy image. The details of the proposed method are
+presented in subsequent sections.
+4.1. Motivation
+The re-visible framework overcomes the information
+loss in blindspot-driven methods. However, mean square
+error as objective function cannot adapt to varying noise
+levels, frequently resulting in residual noise in denoised im-
+ages. Therefore, it is necessary to design an adaptive loss
+that adjusts denoising intensities based on sensed noise lev-
+els. For optimal noise removal, the adaptive loss should per-
+sonalized denoising without noise residues, while ensuring
+valuable signal lossless. Lossless denoising requires that the
+adaptive loss is compatible with the re-visible framework.
+For this purpose, we regard the masked and visible branches
+as Gaussian processes and design an adaptive re-visible loss
+that satisﬁes both personalized and lossless requirements.
+4.2. Adaptive Re-Visible Loss
+The goal of adaptive re-visible loss is to achieve opti-
+mal noise removal while retaining lossless denoising. We
+achieve this by re-considering the re-visible scheme from
+Bayesian reasoning and developing a personalized noise re-
+moval method that does not require an auxiliary branch for
+noise estimation during inference.
+First, we model p(z1|Ωy) as a multivariate Gaussian
+which represents that the latent clean imagez1 is generated
+from the masked noisy volume Ωy as follows:
+z1∼N (z1|µm, Σm), (6)
+where N (·|µm, Σm) denotes the multivariate Gaussian
+distribution with meanµm and variance Σm.
+For the masked branch, Eq. (2) incorporates extra noise
+knowledge into the explicit corruption model, provided as
+the likelihood p(y|z1) given a clean value. Therefore, the
+marginal likelihood of the noisy training data can be con-
+structed via the distribution of unobserved clean dataz1:
+p(y1) =
+∫
+p(y|z1)p(z1|Ωy)dz1. (7)
+As illustrated in Eq. (7), when only noisy training data
+y are available, a known noise model is able to explicitly
+predict the masked prior p(z1|Ωy). Speciﬁcally, for an
+approximate Gaussian noise model, the covariance of two
+mutually independent Gaussian convolutions is simply the
+sum of the components [6]. Hence, the marginal likeli-
+hoodp(y1) is calculated in closed form, allowing to obtain
+the distribution of z1 by maximizing Eq. (7). According
+to Eqs. (2) and (6) as well as the above analysis, the mean
+and variance ofy1 become:
+y1∼N (y1|µm, Σm +diag(α1µm) +σ1I). (8)
+For the visible branch, we constructp(z2|y) as the genera-
+tion of the latent clean image z2 from the raw noise image
+y, which then becomes:
+z2∼N (z2|µv, Σv), (9)
+where the meanµv and variance Σv are directly generated
+from the raw noise image y without gradient update. The
+marginal likelihood for the visible branch via the distribu-
+tion of unobserved clean dataz2 is then formulated as:
+p(y2) =
+∫
+p(y|z2)p(z2|y)dz2. (10)
+Similar to Eq. (8), the mean and variance ofy2 become:
+y2∼N (y2|µv, Σv +diag(α2µv) +σ2I). (11)
+The marginal likelihood p(y1) for the blind branch and
+p(y2) for the visible branch are now available. The mean
+and variance of z2 do not participate in backpropagation
+due to identity mapping. However, maximizing only the
+blind distribution p(z1|Ωy) via Eq. (7) has limited perfor-
+mance. To improve the performance, the loss errors of the
+visible branchp(z2|y) are incorporated into the mask gradi-
+ent. The decorrelation of the two branches enhances visible
+denoising without suppressing the masked results. Thus,
+y1 and y2 are modeled as i.i.d., and a Gaussian mixture
+is applied to boost their representation. Combining Eqs. (8)
+and (11), an enhanced target distributiony is obtained while
+retaining the independence of the two branches:
+y∼
+2∑
+i=1
+πi·N (yi|µyi, Σyi ), (12)
+whereπi is a hyper-parameter for the degree of re-visible.
+Besides, 0≤πi≤ 1 andπ1 +π2 = 1. Set the blind factor
+π1 to 1/(1 +λ), the visible factorπ2 toλ/(1 +λ) andλ is
+a growing constant. Then, Eq. (12) is reformulated as:
+y∼N (y|µm +λµv
+1 +λ , Σy1 +λ2Σy2
+(1 +λ)2 ). (13)
+To simplify notation, we usey∼N (y|µy, Σy) and denote
+the clean target image asx. The mask meanµm is a lower

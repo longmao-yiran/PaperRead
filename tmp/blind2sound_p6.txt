@@ -1,0 +1,117 @@
+noise estimator is 0.0001. For a small training set, the ini-
+tial learning rate of the denoising network is 0.001, while
+0.0003 and 0.0001 for ILSVRC2012 [14] validation set and
+SIDD [2], respectively. The learning rate for the noise es-
+timator decreases by half every 10 epochs with 50 epochs
+trained, while the learning rate for the denoising network
+is halved every 20 epochs with 100 epochs trained. As for
+the hyper-parameter in the adaptive re-visible loss, we set
+λ = 3 as the initial value and progressively increase it to
+11. The denoising network and noise estimation are jointly
+optimized during training. The patches of size 128× 128
+are randomly cropped for training. Note that the details of
+the global masker and global mask mapper remain the same
+as Blind2Unblind [36]. All models are trained using Python
+3.10.4, Pytorch 1.11.0 [32], and an Nvidia Tesla V100 GPU.
+Datasets We consider ﬁve types of Poisson-Gaussian noise
+in synthetic noise estimation: (1) PG 1 : α = 0.1,σ =
+0.02, (2) PG 2 : α = 0.1,σ = 0.0002, (3) PG 3 : α =
+0.05,σ = 0.02, (4) PG 4 : α = 0.05,σ = 0.0002, (5)
+PG 5 : α = 0.01,σ = 0.02. For grayscale images, we
+use BSD400 [29] for the training set, and for sRGB im-
+ages, we use CBSD432 [43]. The noise levels are estimated
+on standard BSD68 [35] and CBSD68 [35] for grayscale
+and sRGB images, respectively. For synthetic denoising,
+we use ILSVRC2012 [14] validation set for sRGB image
+denoising and BSD400 [29] for grayscale image denois-
+ing. Speciﬁcally, following the setting in [23, 20, 36], we
+select 44328 images with sizes between 256× 256 and
+512×512 pixels from ILSVRC2012 validation set for train-
+ing. The test sets used for grayscale image denoising are
+Set12, BSD68 [35], and Urban100 [19], while for sRGB de-
+noising, we use Kodak [16], BSD300 [29], and Set14 [42].
+For real noise experiments, we use SIDD [2] for real-world
+denoising in raw-RGB space and Fluorescence Microscopy
+Denoising (FMD) [45] for real-world grayscale denoising.
+We train SIDD using only the raw-RGB images in the SIDD
+Medium Dataset and validate and test using the SIDD Val-
+idation and Benchmark Datasets. Note that we receive the
+evaluation results for the SIDD Benchmark from the online
+public website [1]. For FMD, we use the Confocal Mice
+and Two-Photon Mice datasets, and the 19th view is used
+for testing.
+Baselines We compare the proposed Cramer Gaussian loss
+with three noise estimation methods, including the Gaus-
+sian loss in FBI-D [8], Foi [15], and Liu [27], and evaluate
+the denoising performance of Blind2Sound against two su-
+pervised methods (N2C [34] and N2N [25]), a traditional
+approach (GAT+BM3D [13]), and four self-supervised al-
+gorithms (N2V [22], NBR2NBR [20], FBI-D [8], and
+Blind2Unblind [36]). We adopt the experimental setting of
+FBI-D and Blind2Unblind and reproduce the results using
+the ofﬁcial implementation for a fair comparison.
+Noise
+Level
+Grayscale sRGB
+Foi [15] Liu [27] FBI-D [8] Ours FBI-D [8] Ours
+( ˆα, ˆσ) ( ˆ α, ˆσ) ( ˆ α, ˆσ) ( ˆ α, ˆσ) ( ˆ α, ˆσ) ( ˆ α, ˆσ)
+PG 1 0.096/0.042 0.072/0.045 0.092/0.039 0.093/ 0.019 0.080/0.021 0.099 /0.001
+PG 2 0.097/0.035 0.071/0.044 0.083/0.061 0.090/ 0.001 0.074/0.033 0.096/0.001
+PG 3 0.049/0.031 0.04/0.04 0.052/0.003 0.048/ 0.022 0.041/0.015 0.051/0.020
+PG 4 0.051/0.018 0.039/0.034 0.046/0.035 0.048/ 0.013 0.040/0.013 0.050/0.0007
+PG 5 0.011/0.027 0.007/0.032 0.009/0.034 0.010/0.021 0.008/0.009 0.010/0.028
+Table 1: The average noise parameter estimates for
+grayscale images in BSD68 and sRGB images in CBSD68.
+5.2. Results for Noise Estimation
+We ﬁrst evaluate the Cramer Gaussian loss for noise esti-
+mation. Table 1 shows the average noise parameters ( ˆα, ˆσ)
+predicted by Foi [15], Liu [27], FBI-D [8], and Cramer
+Gaussian loss for ﬁve noise patterns in grayscale and sRGB
+images. Cramer Gaussian loss shows superior performance
+in estimating Gaussian parameters for grayscale images,
+and its Poisson level estimation is comparable to Foi while
+requiring less inference time. Moreover, compared to FBI-
+D, Cramer Gaussian loss eliminates its severe Gaussian es-
+timation error on grayscale images by using a ﬁne-grained
+fusion strategy. For sRGB space, cross-channel approxi-
+mation enables our method to predict Poisson-Gaussian pa-
+rameters close to their actual value, whereas FBI-D is inac-
+curate for estimating noise in sRGB images.
+Noise Type Method BSD68 Set12 Urabn100
+α = 0.01
+σ = 0.0002
+Baseline, N2C [34] 30.82/0.877 31.49/0.881 30.80/0.901
+Baseline, N2N [25] 30.76/0.876 31.47/0.880 30.84/0.900
+GAT+BM3D [13] 30.08/0.849 30.36/0.871 30.44/0.881
+N2V [22] 29.04/0.824 29.29/0.830 27.48/0.830
+FBI-D [8] 28.09/0.784 29.13/0.828 27.28/0.829
+NBR2NBR [20] 30.38/0.861 31.07/0.869 30.15/0.884
+Blind2Unblind [36] 30.61 /0.869 31.45/0.880 30.70/0.900
+Ours 30.83/0.875 31.68 /0.886 31.14 /0.908
+α = 0.01
+σ = 0.02
+Baseline, N2C [34] 30.54/0.868 31.26/0.876 30.51/0.892
+Baseline, N2N [25] 30.62/0.871 31.34/0.878 30.70/0.899
+GAT+BM3D [13] 29.86/0.844 30.55/0.857 30.23/0.882
+N2V [22] 29.01/0.828 29.43/0.842 27.53/0.838
+FBI-D [8] 27.95/0.776 29.11/0.824 27.21/0.822
+NBR2NBR [20] 30.28/0.860 31.00/0.868 30.15/0.886
+Blind2Unblind [36] 30.41 /0.865 31.27/0.877 30.49/0.896
+Ours 30.62/0.869 31.47 /0.880 30.91 /0.902
+α = 0.05
+σ = 0.02
+Baseline, N2C [34] 27.11/0.765 27.78/0.801 26.69/0.813
+Baseline, N2N [25] 27.07/0.762 27.71/0.799 26.58/0.808
+GAT+BM3D [13] 26.16/0.732 27.26/0.785 26.40/0.795
+N2V [22] 26.25/0.719 26.48/0.755 24.71/0.741
+FBI-D [8] 25.75/0.683 26.42/0.745 24.51/0.722
+NBR2NBR [20] 26.88/0.751 27.51/0.783 26.39/0.800
+Blind2Unblind [36] 27.02 /0.757 27.65/0.796 26.54/0.805
+Ours 27.17/0.766 27.96 /0.805 26.96 /0.819
+Table 2: Grayscale image denoising results. Bold and
+underlined are the highest and second without supervision.
+5.3. Results for Synthetic Denoising
+Grayscale Denoising The denoising results on synthetic
+grayscale images are presented in Table 2. Three Poisson-
+Gaussian noise levels are simulated to evaluate the perfor-
+mance of the proposed method under low, medium, and
