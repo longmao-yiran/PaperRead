@@ -286,6 +286,26 @@ $$
 
 Noise2Self 在三组数据上明显超过 NLM 和 BM3D，在 Hànzì 与 CellNet 上接近 Noise2Noise；在 ImageNet 上与干净监督仍有明显差距。
 
+### 图表补充：图 1–6 与表 1–2
+
+![图 1：J-invariant 自监督视角](images/fig_01_page_02.png)
+
+![图 2：无干净图像的滤波器校准](images/fig_02_page_04.png)
+
+![图 3：单细胞数据示例](images/fig_03_page_05.png)
+
+![图 4：相关结构分析](images/fig_04_page_06.png)
+
+![图 5：高阶结构分析](images/fig_05_page_07.png)
+
+![图 6：深度去噪结果](images/fig_06_page_08.png)
+
+![表 1：传统方法的自监督校准](images/table_01_page_05.png)
+
+![表 2：深度模型结果](images/table_02_page_08.png)
+
+这些图表覆盖理论直觉、传统滤波器校准与深度网络实验，表明自监督误差可以作为无干净标签时的有效模型选择依据。
+
 ## 六、主要发现
 
 1. 对严格 J-invariant 去噪器，自监督误差与真实监督误差只差噪声方差常数。
