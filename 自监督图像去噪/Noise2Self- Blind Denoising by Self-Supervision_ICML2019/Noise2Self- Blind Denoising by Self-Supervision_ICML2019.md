@@ -286,7 +286,7 @@ $$
 
 Noise2Self 在三组数据上明显超过 NLM 和 BM3D，在 Hànzì 与 CellNet 上接近 Noise2Noise；在 ImageNet 上与干净监督仍有明显差距。
 
-### 图表补充：图 1–6 与表 1–2
+### 5.7 图 1–6 与表 1–2：自监督校准和深度去噪结果
 
 ![图 1：J-invariant 自监督视角](images/fig_01_page_02.png)
 
