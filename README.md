@@ -20,6 +20,7 @@
 | One-Step Diffusion for Detail-Rich and Temporally Consistent Video Super-Resolution | [阅读报告](图像恢复/One-Step%20Diffusion%20for%20Detail-Rich%20and%20Temporally%20Consistent%20Video%20Super-Resolution_NeurIPS2025/One-Step%20Diffusion%20for%20Detail-Rich%20and%20Temporally%20Consistent%20Video%20Super-Resolution_NeurIPS2025.md) | [简要总结](图像恢复/One-Step%20Diffusion%20for%20Detail-Rich%20and%20Temporally%20Consistent%20Video%20Super-Resolution_NeurIPS2025/One-Step%20Diffusion%20for%20Detail-Rich%20and%20Temporally%20Consistent%20Video%20Super-Resolution_NeurIPS2025_sample.md) |
 | Reverse Convolution and Its Applications to Image Restoration | [阅读报告](图像恢复/Reverse%20Convolution%20and%20Its%20Applications%20to%20Image%20Restoration_ICCV2025/Reverse%20Convolution%20and%20Its%20Applications%20to%20Image%20Restoration_ICCV2025.md) | [简要总结](图像恢复/Reverse%20Convolution%20and%20Its%20Applications%20to%20Image%20Restoration_ICCV2025/Reverse%20Convolution%20and%20Its%20Applications%20to%20Image%20Restoration_ICCV2025_sample.md) |
 | Checkerboard artifact free sub-pixel convolution: A note on sub-pixel convolution, resize convolution and convolution resize | [阅读报告](图像恢复/Checkerboard%20artifact%20free%20sub-pixel%20convolution-%20A%20note%20on%20sub-pixel%20convolution,%20resize%20convolution%20and%20convolution%20resize_arXiv/Checkerboard%20artifact%20free%20sub-pixel%20convolution-%20A%20note%20on%20sub-pixel%20convolution,%20resize%20convolution%20and%20convolution%20resize_arXiv.md) | [简要总结](图像恢复/Checkerboard%20artifact%20free%20sub-pixel%20convolution-%20A%20note%20on%20sub-pixel%20convolution,%20resize%20convolution%20and%20convolution%20resize_arXiv/Checkerboard%20artifact%20free%20sub-pixel%20convolution-%20A%20note%20on%20sub-pixel%20convolution,%20resize%20convolution%20and%20convolution%20resize_arXiv_sample.md) |
+| Harnessing Diffusion-Yielded Score Priors for Image Restoration | [阅读报告](图像恢复/Harnessing%20Diffusion-Yielded%20Score%20Priors%20for%20Image%20Restoration_arXiv/Harnessing%20Diffusion-Yielded%20Score%20Priors%20for%20Image%20Restoration_arXiv.md) | [简要总结](图像恢复/Harnessing%20Diffusion-Yielded%20Score%20Priors%20for%20Image%20Restoration_arXiv/Harnessing%20Diffusion-Yielded%20Score%20Priors%20for%20Image%20Restoration_arXiv_sample.md) |
 
 ### 图像生成
 
@@ -32,11 +33,13 @@
 | 论文 | 完整报告 | 简要总结 |
 | --- | --- | --- |
 | DDT: Decoupled Diffusion Transformer | [阅读报告](扩散模型/DDT-%20Decoupled%20Diffusion%20Transformer_arXiv/DDT-%20Decoupled%20Diffusion%20Transformer_arXiv.md) | [简要总结](扩散模型/DDT-%20Decoupled%20Diffusion%20Transformer_arXiv/DDT-%20Decoupled%20Diffusion%20Transformer_arXiv_sample.md) |
+| HRDiT: Training-Free High-Resolution Image Generation with Off-the-Shelf Diffusion Transformer Models | [阅读报告](扩散模型/HRDiT%20Training-Free%20High-Resolution%20Image%20Generation%20with%20Off-the-Shelf%20Diffusion%20Transformer%20Models_ECCV2026/HRDiT%20Training-Free%20High-Resolution%20Image%20Generation%20with%20Off-the-Shelf%20Diffusion%20Transformer%20Models_ECCV2026.md) | [简要总结](扩散模型/HRDiT%20Training-Free%20High-Resolution%20Image%20Generation%20with%20Off-the-Shelf%20Diffusion%20Transformer%20Models_ECCV2026/HRDiT%20Training-Free%20High-Resolution%20Image%20Generation%20with%20Off-the-Shelf%20Diffusion%20Transformer%20Models_ECCV2026_sample.md) |
 
 ### 图像超分
 
 | 论文 | 完整报告 | 简要总结 |
 | --- | --- | --- |
+| Fast Image Super-Resolution via Consistency Rectified Flow | [阅读报告](图像超分/Fast%20Image%20Super-Resolution%20via%20Consistency%20Rectified%20Flow_ICCV2025/Fast%20Image%20Super-Resolution%20via%20Consistency%20Rectified%20Flow_ICCV2025.md) | [简要总结](图像超分/Fast%20Image%20Super-Resolution%20via%20Consistency%20Rectified%20Flow_ICCV2025/Fast%20Image%20Super-Resolution%20via%20Consistency%20Rectified%20Flow_ICCV2025_sample.md) |
 | Real-ESRGAN: Training Real-World Blind Super-Resolution | [阅读报告](图像超分/Real-ESRGAN%20Training%20Real-World%20Blind%20Super-Resolution_ICCVW2021/Real-ESRGAN%20Training%20Real-World%20Blind%20Super-Resolution_ICCVW2021.md) | [简要总结](图像超分/Real-ESRGAN%20Training%20Real-World%20Blind%20Super-Resolution_ICCVW2021/Real-ESRGAN%20Training%20Real-World%20Blind%20Super-Resolution_ICCVW2021_sample.md) |
 
 ### 自监督图像去噪
