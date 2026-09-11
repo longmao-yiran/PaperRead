@@ -34,6 +34,7 @@
 | --- | --- | --- |
 | DDT: Decoupled Diffusion Transformer | [阅读报告](扩散模型/DDT-%20Decoupled%20Diffusion%20Transformer_arXiv/DDT-%20Decoupled%20Diffusion%20Transformer_arXiv.md) | [简要总结](扩散模型/DDT-%20Decoupled%20Diffusion%20Transformer_arXiv/DDT-%20Decoupled%20Diffusion%20Transformer_arXiv_sample.md) |
 | HRDiT: Training-Free High-Resolution Image Generation with Off-the-Shelf Diffusion Transformer Models | [阅读报告](扩散模型/HRDiT%20Training-Free%20High-Resolution%20Image%20Generation%20with%20Off-the-Shelf%20Diffusion%20Transformer%20Models_ECCV2026/HRDiT%20Training-Free%20High-Resolution%20Image%20Generation%20with%20Off-the-Shelf%20Diffusion%20Transformer%20Models_ECCV2026.md) | [简要总结](扩散模型/HRDiT%20Training-Free%20High-Resolution%20Image%20Generation%20with%20Off-the-Shelf%20Diffusion%20Transformer%20Models_ECCV2026/HRDiT%20Training-Free%20High-Resolution%20Image%20Generation%20with%20Off-the-Shelf%20Diffusion%20Transformer%20Models_ECCV2026_sample.md) |
+| Refusion: Enabling Large-Size Realistic Image Restoration with Latent-Space Diffusion Models | [阅读报告](扩散模型/Refusion-%20Enabling%20Large-Size%20Realistic%20Image%20Restoration%20with%20Latent-Space%20Diffusion%20Models_CVPRW2023/Refusion-%20Enabling%20Large-Size%20Realistic%20Image%20Restoration%20with%20Latent-Space%20Diffusion%20Models_CVPRW2023.md) | [简要总结](扩散模型/Refusion-%20Enabling%20Large-Size%20Realistic%20Image%20Restoration%20with%20Latent-Space%20Diffusion%20Models_CVPRW2023/Refusion-%20Enabling%20Large-Size%20Realistic%20Image%20Restoration%20with%20Latent-Space%20Diffusion%20Models_CVPRW2023_sample.md) |
 
 ### 图像超分
 
@@ -41,6 +42,7 @@
 | --- | --- | --- |
 | Fast Image Super-Resolution via Consistency Rectified Flow | [阅读报告](图像超分/Fast%20Image%20Super-Resolution%20via%20Consistency%20Rectified%20Flow_ICCV2025/Fast%20Image%20Super-Resolution%20via%20Consistency%20Rectified%20Flow_ICCV2025.md) | [简要总结](图像超分/Fast%20Image%20Super-Resolution%20via%20Consistency%20Rectified%20Flow_ICCV2025/Fast%20Image%20Super-Resolution%20via%20Consistency%20Rectified%20Flow_ICCV2025_sample.md) |
 | Real-ESRGAN: Training Real-World Blind Super-Resolution | [阅读报告](图像超分/Real-ESRGAN%20Training%20Real-World%20Blind%20Super-Resolution_ICCVW2021/Real-ESRGAN%20Training%20Real-World%20Blind%20Super-Resolution_ICCVW2021.md) | [简要总结](图像超分/Real-ESRGAN%20Training%20Real-World%20Blind%20Super-Resolution_ICCVW2021/Real-ESRGAN%20Training%20Real-World%20Blind%20Super-Resolution_ICCVW2021_sample.md) |
+| VOSR: A Vision-Only Generative Model for Image Super-Resolution | [阅读报告](图像超分/VOSR-%20A%20Vision-Only%20Generative%20Model%20for%20Image%20Super-Resolution_CVPR2026/VOSR-%20A%20Vision-Only%20Generative%20Model%20for%20Image%20Super-Resolution_CVPR2026.md) | [简要总结](图像超分/VOSR-%20A%20Vision-Only%20Generative%20Model%20for%20Image%20Super-Resolution_CVPR2026/VOSR-%20A%20Vision-Only%20Generative%20Model%20for%20Image%20Super-Resolution_CVPR2026_sample.md) |
 
 ### 自监督图像去噪
 
@@ -63,5 +65,11 @@
 - [目标检测](目标检测/)
 - [智能构图](智能构图/)
 - [ISP 与噪声建模](ISP与噪声建模/)
+
+### 图像质量评估
+
+| 论文 | 完整报告 | 简要总结 |
+| --- | --- | --- |
+| Zoom-IQA: Image Quality Assessment with Reliable Region-Aware Reasoning | [阅读报告](图像质量评估/Zoom-IQA-%20Image%20Quality%20Assessment%20with%20Reliable%20Region-Aware%20Reasoning_ECCV2026/Zoom-IQA-%20Image%20Quality%20Assessment%20with%20Reliable%20Region-Aware%20Reasoning_ECCV2026.md) | [简要总结](图像质量评估/Zoom-IQA-%20Image%20Quality%20Assessment%20with%20Reliable%20Region-Aware%20Reasoning_ECCV2026/Zoom-IQA-%20Image%20Quality%20Assessment%20with%20Reliable%20Region-Aware%20Reasoning_ECCV2026_sample.md) |
 
 PDF 文件仅保存在本地，并已加入 Git 忽略规则；README 仅链接仓库中可访问的 Markdown 阅读报告。
