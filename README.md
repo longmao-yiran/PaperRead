@@ -4,6 +4,12 @@
 
 ## 论文索引
 
+### 扩散模型方法专题
+
+| 专题 | 完整文档 | 简要总结 |
+| --- | --- | --- |
+| 图像恢复的三种扩散与流匹配方案对照：高斯起点、直接 LQ→HQ、残差增强随机路径 | [方法、示意图、公式推导与论文索引](扩散模型/图像恢复的三种扩散与流匹配方案对照/图像恢复的三种扩散与流匹配方案对照.md) | [简要总结](扩散模型/图像恢复的三种扩散与流匹配方案对照/图像恢复的三种扩散与流匹配方案对照_sample.md) |
+
 ### RAW 图像去噪
 
 | 论文 | 完整报告 | 简要总结 |
@@ -35,6 +41,8 @@
 | DDT: Decoupled Diffusion Transformer | [阅读报告](扩散模型/DDT-%20Decoupled%20Diffusion%20Transformer_arXiv/DDT-%20Decoupled%20Diffusion%20Transformer_arXiv.md) | [简要总结](扩散模型/DDT-%20Decoupled%20Diffusion%20Transformer_arXiv/DDT-%20Decoupled%20Diffusion%20Transformer_arXiv_sample.md) |
 | HRDiT: Training-Free High-Resolution Image Generation with Off-the-Shelf Diffusion Transformer Models | [阅读报告](扩散模型/HRDiT%20Training-Free%20High-Resolution%20Image%20Generation%20with%20Off-the-Shelf%20Diffusion%20Transformer%20Models_ECCV2026/HRDiT%20Training-Free%20High-Resolution%20Image%20Generation%20with%20Off-the-Shelf%20Diffusion%20Transformer%20Models_ECCV2026.md) | [简要总结](扩散模型/HRDiT%20Training-Free%20High-Resolution%20Image%20Generation%20with%20Off-the-Shelf%20Diffusion%20Transformer%20Models_ECCV2026/HRDiT%20Training-Free%20High-Resolution%20Image%20Generation%20with%20Off-the-Shelf%20Diffusion%20Transformer%20Models_ECCV2026_sample.md) |
 | Refusion: Enabling Large-Size Realistic Image Restoration with Latent-Space Diffusion Models | [阅读报告](扩散模型/Refusion-%20Enabling%20Large-Size%20Realistic%20Image%20Restoration%20with%20Latent-Space%20Diffusion%20Models_CVPRW2023/Refusion-%20Enabling%20Large-Size%20Realistic%20Image%20Restoration%20with%20Latent-Space%20Diffusion%20Models_CVPRW2023.md) | [简要总结](扩散模型/Refusion-%20Enabling%20Large-Size%20Realistic%20Image%20Restoration%20with%20Latent-Space%20Diffusion%20Models_CVPRW2023/Refusion-%20Enabling%20Large-Size%20Realistic%20Image%20Restoration%20with%20Latent-Space%20Diffusion%20Models_CVPRW2023_sample.md) |
+| ScaleResfusion: Residual Rectified Flow based on Residual Vector Field | [阅读报告](扩散模型/ScaleResfusion-%20Residual%20Rectified%20Flow%20based%20on%20Residual%20Vector%20Field_arXiv/ScaleResfusion-%20Residual%20Rectified%20Flow%20based%20on%20Residual%20Vector%20Field_arXiv.md) | [简要总结](扩散模型/ScaleResfusion-%20Residual%20Rectified%20Flow%20based%20on%20Residual%20Vector%20Field_arXiv/ScaleResfusion-%20Residual%20Rectified%20Flow%20based%20on%20Residual%20Vector%20Field_arXiv_sample.md) |
+| Resfusion: Denoising Diffusion Probabilistic Models for Image Restoration Based on Prior Residual Noise | [阅读报告（含等价状态推导）](扩散模型/Resfusion-%20Denoising%20Diffusion%20Probabilistic%20Models%20for%20Image%20Restoration%20Based%20on%20Prior%20Residual%20Noise_NeurIPS2024/Resfusion-%20Denoising%20Diffusion%20Probabilistic%20Models%20for%20Image%20Restoration%20Based%20on%20Prior%20Residual%20Noise_NeurIPS2024.md) | [简要总结](扩散模型/Resfusion-%20Denoising%20Diffusion%20Probabilistic%20Models%20for%20Image%20Restoration%20Based%20on%20Prior%20Residual%20Noise_NeurIPS2024/Resfusion-%20Denoising%20Diffusion%20Probabilistic%20Models%20for%20Image%20Restoration%20Based%20on%20Prior%20Residual%20Noise_NeurIPS2024_sample.md) |
 
 ### 图像超分
 
